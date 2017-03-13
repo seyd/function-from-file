@@ -1,7 +1,7 @@
 {
 	"name": "function-from-file",
 	"version": "1.0.0",
-	"description": "Get one or more functions from given file. Extract also private functions, sync or async. Ideal for unit testing.",
+	"description": "Get one or more functions from given file. Extract also private functions, sync or async. Great for unit testing.",
 	"main": "index.js",
 	"author": "Johnny Seyd <johnnyseyd@gmail.com>",
 	"license": "MIT",

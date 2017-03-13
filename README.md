@@ -2,7 +2,7 @@
 # function-from-file
 ![platform-image] ![license-image] ![tested-image] ![coverage-image]
 
-Node.js module for extracting function from given javascript file (perfect for unit testing).
+Node.js module for extracting function from given javascript file (great for unit testing).
 * both **sync** or **async** options
 * reach **private functions** also
 * simple way of **mocking** inner dependecies
@@ -33,7 +33,7 @@ $ npm install function-from-file --save-dev
 ## Features / API
 
 ### Sync
-This example extracts a function *addNumbers* from script `./foo/bar.js*`
+This example extracts a function *addNumbers* from script `./foo/bar.js`
 ```js
 var add = getFunction('./foo/bar.js', 'addNumbers');
 var result = add(100, 50);
@@ -48,7 +48,7 @@ fns.bar();
 ```
 
 ### Async
-As a last parameter use a callback function:
+To get a function asynchronous add the last parameter as a callback function:
 ```js
 getFunction('./foo/bar.js', 'addNumbers', function(err, result) {
     if (err) throw err;
@@ -65,22 +65,22 @@ getFunction('./foo/bar.js', ['foo', 'bar'], function(err, result) {
 ```
 
 ### Mock dependecies
-Sometimes you extract function that has some dependencies on other functions or variables. Example:
-*foo/bar.js*
+Sometimes you extract function that has some dependencies on other functions or variables. See this example:
 ```js
+// File foo/bar.js
 var koef = 8;
 function multiplier(a) {
     return a * koef;
 }
 ```
-When you extract function (**incorrect**):
+When you extract function (**not working solution**):
 ```js
 var fn = getFunction('./foo/bar.js', 'multiplier');
 fn(2);
 ```
 This code throws error: *Uncaught ReferenceError: koef is not defined*.
 
-**Correct** solution is to mock (define localy) all the dependencies:
+**Working solution** is to mock (define localy) all the dependencies:
 ```js
 var fn = getFunction('./foo/bar.js', 'multiplier');
 var koef = 8;
@@ -95,6 +95,7 @@ Now it uses the local variable *koef*.
 The most expensive operation is reading a file and parsing a source code and looking for a functions. So this is why caching is implemented. When you are getting function from the same file, cached result is used. Caching is default turned on, but you can turn it off.
 
 **Disable cache**
+
 To turn the caching off call the: 
 ```js
 var getFunction = require("function-from-file");
@@ -102,6 +103,7 @@ getFunction.disableCache();
 ```
 
 **Enable cache**
+
 To turn the caching on call the: 
 ```js
 var getFunction = require("function-from-file");
@@ -109,6 +111,7 @@ getFunction.enableCache();
 ```
 
 **Clear cache**
+
 To clear the cache call the:
 ```js
 var getFunction = require("function-from-file");
@@ -117,7 +120,9 @@ getFunction.clearCache();
 
 ## Tests
 To run the tests, at first install the dependencies: `$ npm install`
+
 Running unit tests: `$ npm test`
+
 Running coverage tests: `$ npm run test-cov`
 
 ## Author
