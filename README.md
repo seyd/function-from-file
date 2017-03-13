@@ -68,6 +68,7 @@ getFunction('./foo/bar.js', ['foo', 'bar'], function(err, result) {
 Sometimes you extract function that has some dependencies on other functions or variables. See this example:
 ```js
 // File foo/bar.js
+
 var koef = 8;
 function multiplier(a) {
     return a * koef;
@@ -88,7 +89,9 @@ eval('var mockedFn = '+fn);
 mockedFn(4);
 ```
 The function *fn* in *eval* statement was converted to string so it evals:
+
 `eval("var mockedFn = function multiplier(a) { return a * koef; }");`
+
 Now it uses the local variable *koef*.
 
 ### Caching
