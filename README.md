@@ -1,6 +1,6 @@
 
 # function-from-file
-![platform-image] ![license-image] ![tested-image] ![coverage-image]
+![platform-image] ![license-image] ![tested-image] ![coverage-image]&nbsp; [![npm-version-image]](https://www.npmjs.com/package/function-from-file)
 
 Node.js module for extracting function from given javascript file (great for unit testing).
 * both **sync** or **async** options
@@ -139,6 +139,8 @@ Build on the module [function-extractor](https://github.com/gjtorikian/function-
   [BSD](LICENSE)
 
 [platform-image]: https://img.shields.io/badge/platform-Node.js-green.svg
-[license-image]: https://img.shields.io/badge/license-MIT-orange.svg
+[license-image]: https://img.shields.io/badge/license-BSD-orange.svg
 [tested-image]: https://img.shields.io/badge/tested-well-yellow.svg
 [coverage-image]: https://img.shields.io/badge/coverage-100%25-blue.svg
+[npm-version-image]: https://img.shields.io/badge/npm-v1.0.2-lightgray.svg
+[npm-url]: https://www.npmjs.com/package/function-from-file
