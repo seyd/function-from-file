@@ -1,0 +1,40 @@
+{
+	"name": "function-from-file",
+	"version": "1.0.0",
+	"description": "Get one or more functions from given file. Extract also private functions, sync or async. Ideal for unit testing.",
+	"main": "index.js",
+	"author": "Johnny Seyd <johnnyseyd@gmail.com>",
+	"license": "MIT",
+	"repository": "seyd/function-from-file",
+	"keywords": [
+		"function",
+		"functions",
+		"extract",
+		"private",
+		"unit test",
+		"unit tests",
+		"unittest",
+		"testing",
+		"get function",
+		"extract function",
+		"parse function",
+		"find function"
+	],
+	"files": [
+		"LICENSE",
+		"README.md",
+		"index.js",
+		"lib/"
+	],
+	"dependencies": {
+		"function-extractor": "0.0.5"
+	},
+	"devDependencies": {
+		"fs": "0.0.1-security",
+		"jasmine": "^2.5.3"
+	},
+	"scripts": {
+		"test": "jasmine",
+		"test-cov": "istanbul cover node_modules/jasmine/bin/jasmine.js"
+	}
+}
